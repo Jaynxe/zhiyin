@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+.active{
+    color: #4f46e5;
+}
+
+/* 全局滚动条样式 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* 暗色模式滚动条样式 */
+.dark ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+
+/*隐藏滚动条的工具类*/
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+}
+
+/* 富文本编辑器的层级提高*/
+.w-e-full-screen-container {
+    z-index: 2000 !important; /* 比 Modal 高 */
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+}
+
+
+/* 富文本编辑器的暗黑模式 */
+html.dark {
+    /* textarea - dark theme */
+    --w-e-textarea-bg-color: #1e1e1e;
+    --w-e-textarea-color: #f0f0f0;
+    --w-e-textarea-border-color: #3c3c3c;
+    --w-e-textarea-slight-border-color: #2e2e2e;
+    --w-e-textarea-slight-color: #555;
+    --w-e-textarea-slight-bg-color: #2a2a2a;
+    --w-e-textarea-selected-border-color: #4a90e2;
+    --w-e-textarea-handler-bg-color: #4a90e2;
+
+    /* toolbar - dark theme */
+    --w-e-toolbar-color: #ccc;
+    --w-e-toolbar-bg-color: #2b2b2b;
+    --w-e-toolbar-active-color: #fff;
+    --w-e-toolbar-active-bg-color: #3a3a3a;
+    --w-e-toolbar-disabled-color: #666;
+    --w-e-toolbar-border-color: #444;
+
+    /* modal - dark theme */
+    --w-e-modal-button-bg-color: #3a3a3a;
+    --w-e-modal-button-border-color: #555;
+
+    .aplayer .aplayer-body {
+        background: #333 !important;
+    }
+
+    .aplayer .aplayer-info {
+        color: #eee !important;
+        border: #333 !important;
+    }
+
+    .aplayer .aplayer-time {
+        color: #ccc !important;
+    }
+
+    .aplayer .aplayer-info .aplayer-author {
+        color: #ccc !important;
+    }
+}
+
+.aplayer .aplayer-info {
+    display: block !important;
+}
+
+.aplayer .aplayer-body {
+    max-width: calc(100% - 18px) !important;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.aplayer:hover .aplayer-body {
+    opacity: 1;
+}
+
+.aplayer .aplayer-lrc {
+    z-index: 1000 !important;
+    transform: translateY(-10px); /* 向上移动 20px */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.aplayer:hover .aplayer-lrc {
+    opacity: 1;
+}

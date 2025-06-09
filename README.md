@@ -18,13 +18,14 @@
 - Vite
 - Tailwind CSS
 - React Router
-- 状态管理（待定）
+- zustand
 
 ### 后端
 - Python
-- FastAPI
-- SQLAlchemy
-- PostgreSQL
+- django
+- mysql
+- redis
+- jwt
 
 ## 开发环境设置
 
@@ -41,7 +42,8 @@ cd backend
 python -m venv venv
 source venv/bin/activate  # Windows: .\venv\Scripts\activate
 pip install -r requirements.txt
-python main.py
+cd zhiyin_backend
+python main.py  runserver
 ```
 
 ## 项目规范
@@ -51,13 +53,31 @@ python main.py
 - 使用 Conventional Commits 规范进行提交
 - 使用 Git Flow 工作流
 
-## 贡献指南
+## 项目运行图片
+### 后台
 
-1. Fork 项目
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 创建 Pull Request
+![image](https://github.com/user-attachments/assets/3f2d0e0e-297d-4284-a9e2-c4fdee2b58b8)
+
+
+![image](https://github.com/user-attachments/assets/0da2f4c5-be85-4795-a1cc-5261ad5ad2a9)
+
+
+![image](https://github.com/user-attachments/assets/ef586bba-fe53-415d-8c64-830b82220664)
+
+
+![image](https://github.com/user-attachments/assets/31868c55-da30-4dc4-8f29-2c947c522f94)
+
+
+![image](https://github.com/user-attachments/assets/29667936-e4d0-40e2-9f22-5860a22c4409)
+
+
+![image](https://github.com/user-attachments/assets/a79af993-cc8e-4fdf-ae16-01a86bfbcd16)
+
+
+![image](https://github.com/user-attachments/assets/76750bb3-fba0-4275-8d70-3a3371b18517)
+
+
+![image](https://github.com/user-attachments/assets/98ec46da-c2b8-4279-b7d9-2c5b7e6d0c6a)
 
 ## 许可证
 
